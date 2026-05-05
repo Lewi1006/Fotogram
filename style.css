@@ -1,6 +1,6 @@
 .header {
   height: 72px;
-  width: 320px;
+  width: 100%;
   background-color: var(--background-color);
 
   .logo {
@@ -10,14 +10,14 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-
+  
     #fotogram-icon {
       display: flex;
       align-items: center;
       height: 30px;
       width: 31px;
     }
-
+  
     #fotogram-font {
       display: flex;
       align-items: center;
