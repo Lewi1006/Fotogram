@@ -23,20 +23,24 @@ function render() {
   }
 }
 
-
 const dialogRef = document.getElementById("dialog");
 const dialogImg = document.getElementById("dialog-img");
 
-function openDialog(index){
+function openDialog(index) {
   dialogRef.showModal();
+
+  dialogImg.innerHTML += /*html*/`
+    <img src="${images[index]}" alt="analog photo"/>
+  `
 }
 
-function closeDialog(){
-  dialogRef.close(); 
+function closeDialog() {
+  dialogRef.close();
 }
 
 
 
-  // dialogRef.innerHTML = /*html*/`
-  //   <header><h2>img-titles</h2></header>
-  // `
+
+// dialogRef.innerHTML = /*html*/`
+//   <header><h2>img-titles</h2></header>
+// `
