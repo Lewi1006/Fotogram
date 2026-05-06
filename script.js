@@ -18,7 +18,25 @@ const images = [
 function render() {
   for (let i = 0; i < images.length; i++) {
     containerRef.innerHTML += /*html*/ `
-        <img src="${images[i]}" alt="analog photo"/>
+        <img onclick="openDialog(${i})" src="${images[i]}" alt="analog photo"/>
     `;
   }
 }
+
+
+const dialogRef = document.getElementById("dialog");
+const dialogImg = document.getElementById("dialog-img");
+
+function openDialog(index){
+  dialogRef.showModal();
+}
+
+function closeDialog(){
+  dialogRef.close(); 
+}
+
+
+
+  // dialogRef.innerHTML = /*html*/`
+  //   <header><h2>img-titles</h2></header>
+  // `
