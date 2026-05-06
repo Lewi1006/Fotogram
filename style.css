@@ -79,7 +79,32 @@ body {
   height: 100dvh;
   max-width: none;
   max-height: none;
+  padding: 24px 16px;
   background-color: rgba(9, 33, 42, 1);
+  border-radius: 40px;
+
+  .dialog-header-wrapper{
+    height: 70px;
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+      display: flex;
+      position: absolute;
+      bottom: 0;
+      left:0;
+    }
+
+    button{
+      display: flex;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+  }
 }
 
 .footer-wrapper {
