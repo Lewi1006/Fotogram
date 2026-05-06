@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="variables.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
-  <body>
+  <body onload="render()">
     <header>
       <section class="header">
         <div class="content">
@@ -29,7 +29,21 @@
         </div>
       </section>
     </header>
-    <main></main>
+
+    <main>
+      <section class="headline-gallery">
+        <div class="content">
+          <article class="gallery-wrapper">
+            <div class="headline">
+              <h1>Your personal photo album</h1>
+            </div>
+
+            <div id="img-gallery"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
       <div class="content">
         <div class="footer-wrapper">
