@@ -31,10 +31,9 @@ body {
   }
 }
 
-
 .headline-gallery {
   width: 100%;
-  height: 100dvh;
+  height: 100%;
   padding: 48px 0 48px 0;
 }
 
@@ -77,9 +76,6 @@ body {
   }
 
 }
-
-
-
 
 
 .footer-wrapper {
