@@ -18,7 +18,7 @@ const images = [
 function render() {
   for (let i = 0; i < images.length; i++) {
     containerRef.innerHTML += /*html*/ `
-        <img src="${images[i]}" alt="analog photo"/>
+        <img class="img-gallery-item" src="${images[i]}" alt="analog photo"/>
     `;
   }
 }

@@ -37,7 +37,7 @@ body {
   padding: 48px 0 48px 0;
 }
 
-.gallery-wrapper{
+.gallery-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -48,7 +48,7 @@ body {
   .headline {
     height: auto;
     width: auto;
-  
+
     h1 {
       font-size: 42px;
       font-weight: 800;
@@ -57,30 +57,28 @@ body {
     }
   }
 
-  #img-gallery{
+  #img-gallery {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
 
-
-    img{
+    .img-gallery-item {
       height: 130px;
       width: 130px;
       object-fit: cover;
       border-radius: 16px;
       border: 2px solid rgba(18, 70, 88, 1);
       cursor: pointer;
-    }
 
-    img:hover{
+    }
+    
+    .img-gallery-item:hover {
       border: 2px solid rgba(107, 193, 225, 1);
     }
   }
-
 }
-
 
 .footer-wrapper {
   width: auto;
