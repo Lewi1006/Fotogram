@@ -1,6 +1,5 @@
 const containerRef = document.getElementById("img-gallery");
 
-
 // #region img objects
 const image01 = {
   src: "./assets/img/img01.jpeg",
@@ -87,24 +86,19 @@ function render() {
   }
 }
 
-
 const dialogRef = document.getElementById("myDialog");
 const dialogImg = document.getElementById("dialog-img");
 
 function openDialog(index) {
   dialogRef.showModal();
-
-  dialogImg.innerHTML = /*html*/`
+  dialogImg.innerHTML = /*html*/ `
     <img src="${images[index].src}" alt="${images[index].alt}"/>
-  `
+  `;
 }
 
 function closeDialog() {
   dialogRef.close();
 }
-
-
-
 
 // dialogRef.innerHTML = /*html*/`
 //   <header><h2>img-titles</h2></header>
