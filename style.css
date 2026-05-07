@@ -70,8 +70,12 @@ body {
       width: 130px;
       object-fit: cover;
       border-radius: 16px;
-      border: 2px; 
+      border: 2px solid rgba(18, 70, 88, 1);
+      cursor: pointer;
+    }
 
+    img:hover{
+      border: 2px solid rgba(107, 193, 225, 1);
     }
   }
 
