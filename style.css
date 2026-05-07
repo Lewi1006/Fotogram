@@ -74,11 +74,11 @@ body {
   }
 }
 
-#dialog {
+dialog {
   width: 100dvw;
   height: 100dvh;
-  max-width: none;
-  max-height: none;
+  _max-width: none;
+  _max-height: none;
   padding: 24px 16px;
   background-color: rgba(9, 33, 42, 1);
   border-radius: 40px;
@@ -87,6 +87,8 @@ body {
   justify-self: center;
   align-items: center;
   gap: 60px;
+  _position: absolute;
+  _top: 0;
 
   .dialog-header-wrapper{
     height: 70px;

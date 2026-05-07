@@ -23,7 +23,7 @@ function render() {
   }
 }
 
-const dialogRef = document.getElementById("dialog");
+const dialogRef = document.getElementById("myDialog");
 const dialogImg = document.getElementById("dialog-img");
 
 function openDialog(index) {
