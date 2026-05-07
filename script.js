@@ -4,16 +4,19 @@ const containerRef = document.getElementById("img-gallery");
 const image01 = {
   src: "./assets/img/img01.jpeg",
   alt: "hallway with horseshoe and rose decoration on the wall",
+  title: "Hallway",
 };
 
 const image02 = {
   src: "./assets/img/img02.jpeg",
   alt: "white peacock",
+  title: "Peacock",
 };
 
 const image03 = {
   src: "./assets/img/img03.jpeg",
   alt: "highheels viewed from the back with rhinestones",
+  title: "2000s heels",
 };
 
 const image04 = {
@@ -24,41 +27,49 @@ const image04 = {
 const image05 = {
   src: "./assets/img/img05.jpeg",
   alt: "flowerpot in winter",
+  title: "Flowers in winter",
 };
 
 const image06 = {
   src: "./assets/img/img06.jpeg",
   alt: "window in glasgow botanicals",
+  title: "Glasgow botanics",
 };
 
 const image07 = {
   src: "./assets/img/img07.jpeg",
   alt: "bicycles on the beach",
+  title: "Isle of Bute",
 };
 
 const image08 = {
   src: "./assets/img/img08.jpeg",
   alt: "gravestone decoration",
+  title: "Warsaw cemetry",
 };
 
 const image09 = {
   src: "./assets/img/img09.jpeg",
   alt: "stone sculpture of an angel in Berlin",
+  title: "Angel sculpture",
 };
 
 const image10 = {
   src: "./assets/img/img10.jpeg",
   alt: "car covered with sleeve",
+  title: "02/2026",
 };
 
 const image11 = {
   src: "./assets/img/img11.jpeg",
   alt: "dog jumping on fence",
+  title: "Dog behind fence",
 };
 
 const image12 = {
   src: "./assets/img/img12.jpeg",
   alt: "hedge that is half brown and half green",
+  title: "Brandenburg 2025",
 };
 
 //#endregion
@@ -100,6 +111,16 @@ function closeDialog() {
   dialogRef.close();
 }
 
+const dialogHeadline = document.getElementById("dialog-headline");
+
+function giveTitle(index) {
+    dialogHeadline.innerHTML = /*html*/ `
+     <h2> ${images[index].title} </h2>;
+    `;
+  }
+
+
+// dialogHeadline.innerHTML = 'images[i].alt';
 // dialogRef.innerHTML = /*html*/`
 //   <header><h2>img-titles</h2></header>
 // `
