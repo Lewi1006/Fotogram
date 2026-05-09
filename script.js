@@ -101,7 +101,7 @@ const images = [
 
 // render images into our html div by using a for loop that loops through the images array
 // onlclick event on image that calls the openDialog function 
-// --> here we need to pass the value to the variable index --> index stores the value of images array
+// --> here we need to pass the value to the variable index --> index represents the position of img in array
 function render() {
   for (let i = 0; i < images.length; i++) {
     containerRef.innerHTML += /*html*/ `
