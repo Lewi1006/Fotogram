@@ -188,12 +188,12 @@ dialog {
 
     #da-logo {
       height: auto;
-      width: 28px;
+      width: clamp(28px, 5dvw, 38px);
     }
 
     #da-font {
       height: auto;
-      width: 65px;
+      width: clamp(65px, 6dvw, 86px);
     }
   }
 
@@ -210,7 +210,8 @@ dialog {
     }
 
     p {
-      font-size: 400;
+      font-weight: 400;
+      font-size: 16px;
       color: rgba(98, 123, 132, 1);
     }
   }
