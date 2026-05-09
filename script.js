@@ -98,38 +98,59 @@ function render() {
   }
 }
 
+// global variables
 const dialogRef = document.getElementById("myDialog");
+let updatedIndex = 0;
 
 function openDialog(index) {
   dialogRef.showModal();
-  dialogRef.innerHTML = /*html*/ `
 
- <div class="dialog-wrapper">
-        <header class="dialog-header-wrapper">
-             <h2>${images[index].title} </h2>
-             <button onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
-            </button>
-        </header>
-  
-        <div class="dialog-img">
-          <img src="${images[index].src}" alt="${images[index].alt}"/>
-        </div>
-  
-        <footer>
-          <div class="gallery-controls"> 
-            <button class="previous-photo"><img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> </button>
-            <p></p>
-            <button class="next-photo"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+  updatedIndex = index;
 
-          </div>
-        
-        </footer>
-
-
-      </div>
-  `;
+  updateDialogBody();
 }
 
 function closeDialog() {
   dialogRef.close();
+}
+
+function updateDialogBody() {
+  dialogRef.innerHTML = /*html*/ `
+<div class="dialog-wrapper">
+       <header class="dialog-header-wrapper">
+            <h2>${images[updatedIndex].title} </h2>
+            <button onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
+           </button>
+       </header>
+ 
+       <div class="dialog-img">
+         <img src="${images[updatedIndex].src}" alt="${images[updatedIndex].alt}"/>
+       </div>
+ 
+       <footer>
+         <div class="gallery-controls"> 
+           <button class="previous-photo" onclick="previousPhoto()"><img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> </button>
+           <p id="count">${updatedIndex + 1}/${images.length}</p>
+           <button class="next-photo" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+         </div>
+       </footer>
+     </div>
+ `;
+}
+
+function previousPhoto() {
+  updatedIndex--;
+  if (updatedIndex < 0) {
+    updatedIndex = images.length - 1;
+  }
+  updateDialogBody();
+}
+
+function nextPhoto() {
+  updatedIndex++;
+
+  if (updatedIndex >= images.length) {
+    updatedIndex = 0;
+  }
+  updateDialogBody();
 }
