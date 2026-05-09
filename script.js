@@ -1,5 +1,11 @@
+// create variable to access html document elements by ID 
+// --> here to render img into img-gallery 
+
 const containerRef = document.getElementById("img-gallery");
 
+
+// create objects for each image with the properties src/alt/title
+// --> because we need to access each property individually 
 // #region img objects
 const image01 = {
   src: "./assets/img/img01.jpeg",
@@ -75,6 +81,8 @@ const image12 = {
 
 //#endregion
 
+
+// create array with the image objects
 const images = [
   image01,
   image02,
@@ -90,6 +98,10 @@ const images = [
   image12,
 ];
 
+
+// render images into our html div by using a for loop that loops through the images array
+// onlclick event on image that calls the openDialog function 
+// --> here we need to pass the value to the variable index --> index stores the value of images array
 function render() {
   for (let i = 0; i < images.length; i++) {
     containerRef.innerHTML += /*html*/ `
@@ -98,9 +110,18 @@ function render() {
   }
 }
 
-// global variables
+// create popup dialog
+// render into dialog tag in html 
 const dialogRef = document.getElementById("myDialog");
+
+// define a global variable for index because all functions need to access the value
+// easier to make it global so I don't have to pass value from function to function and can work with variable scope
 let updatedIndex = 0;
+
+// function to open the dialog --> content of Dialog is in seperate function 
+// --> which is why it calls the updatedDialogBody function 
+// In the dialog I assign  the value of index to the global updatedIndex Variable so all functions can access it 
+// new stored value of updatedIndex is now globally the value of Index 
 
 function openDialog(index) {
   dialogRef.showModal();
@@ -113,6 +134,17 @@ function openDialog(index) {
 function closeDialog() {
   dialogRef.close();
 }
+
+
+// function that runs what happens inside the dialog window --> whole html structure
+// when I click on img --> same img will be large (we make sure it's the same img by accessing same index)
+// I address my <dialog id="myDialog"> with the variable dialogRef 
+// and say I want to write within HTML by using innerHTML
+// h2 accesses value thats stored at a certain index of array, which is an object 
+// and by .title we cann give out the objects property
+// img gets updated by accessing src and alt of object
+// buttons have onclick function similar to popup dialog 
+// n/12 = index/length of array --> index+1 damit es bei 0 anfängt 
 
 function updateDialogBody() {
   dialogRef.innerHTML = /*html*/ `
@@ -138,6 +170,11 @@ function updateDialogBody() {
  `;
 }
 
+
+// when button is clicked the index decreases
+// if we reach the 1st image it should wrap around and count down from 12 again
+// --> thus if index value is smaller than 0 the new value should be images.length -1 (-1 because last element in array is null terminator)
+// then execute updateDialogBody function so content is displayed again 
 function previousPhoto() {
   updatedIndex--;
   if (updatedIndex < 0) {
@@ -146,6 +183,8 @@ function previousPhoto() {
   updateDialogBody();
 }
 
+
+// if we reach the 12th images the value at updateIndex should be 0 again so we can start with the 1st image
 function nextPhoto() {
   updatedIndex++;
 
