@@ -16,8 +16,8 @@ body {
     gap: 8px;
 
     @media screen and (min-width: 900px) {
-    justify-content: flex-start; 
-    padding-left: 120px;
+      justify-content: flex-start;
+      padding-left: 120px;
     }
 
     #fotogram-icon {
@@ -50,12 +50,16 @@ body {
   flex-direction: column;
   gap: 24px;
 
+  @media screen and (min-width: 900px) {
+    gap: 120px;
+  }
+
   .headline {
     height: auto;
     width: auto;
 
     h1 {
-      font-size: 42px;
+      font-size: clamp(42px, 6dvw, 56px);
       font-weight: 800;
       color: rgba(255, 255, 255, 1);
       text-align: center;
@@ -63,11 +67,18 @@ body {
   }
 
   #img-gallery {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 16px;
+
+    @media screen and (min-width: 900px) {
+      row-gap: 56px;
+      width: 1170px;
+    }
 
     .img-gallery-item {
       height: 130px;
@@ -77,14 +88,18 @@ body {
       border: 2px solid rgba(18, 70, 88, 1);
       cursor: pointer;
 
+      @media screen and (min-width: 900px) {
+        height: 150px;
+        width: 150px;
+      }
     }
-    
+
     .img-gallery-item:hover {
       border: 2px solid rgba(107, 193, 225, 1);
     }
   }
 }
-    
+
 dialog {
   width: 100%;
   height: 100%;
