@@ -105,9 +105,15 @@ dialog {
   height: 100%;
   max-width: none;
   max-height: none;
+  margin: auto;
   padding: 24px 16px;
   background-color: rgba(9, 33, 42, 1);
   border-radius: 40px;
+
+  @media screen and (min-width: 900px) {
+    width: 688px;
+    height: 675px;
+  }
 
   .dialog-wrapper {
     height: 100%;
