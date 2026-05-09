@@ -3,7 +3,7 @@ body {
 }
 
 .header {
-  height: 72px;
+  height: clamp(72px, 5.5dvw, 80px);
   width: 100%;
   background-color: var(--background-color);
 
@@ -15,18 +15,23 @@ body {
     align-items: center;
     gap: 8px;
 
+    @media screen and (min-width: 900px) {
+    justify-content: flex-start; 
+    padding-left: 120px;
+    }
+
     #fotogram-icon {
       display: flex;
       align-items: center;
-      height: 30px;
-      width: 31px;
+      height: auto;
+      width: clamp(31px, 3dvw, 40px);
     }
 
     #fotogram-font {
       display: flex;
       align-items: center;
       height: auto;
-      width: 130px;
+      width: clamp(130px, 14dvw, 160px);
     }
   }
 }
