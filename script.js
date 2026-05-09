@@ -22,6 +22,7 @@ const image03 = {
 const image04 = {
   src: "./assets/img/img04.jpeg",
   alt: "pink lillies on a staircase",
+  title: "Pink lillies",
 };
 
 const image05 = {
@@ -98,29 +99,37 @@ function render() {
 }
 
 const dialogRef = document.getElementById("myDialog");
-const dialogImg = document.getElementById("dialog-img");
 
 function openDialog(index) {
   dialogRef.showModal();
-  dialogImg.innerHTML = /*html*/ `
-    <img src="${images[index].src}" alt="${images[index].alt}"/>
+  dialogRef.innerHTML = /*html*/ `
+
+ <div class="dialog-wrapper">
+        <header class="dialog-header-wrapper">
+             <h2>${images[index].title} </h2>
+             <button onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
+            </button>
+        </header>
+  
+        <div class="dialog-img">
+          <img src="${images[index].src}" alt="${images[index].alt}"/>
+        </div>
+  
+        <footer>
+          <div class="gallery-controls"> 
+            <button class="previous-photo"><img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> </button>
+            <p></p>
+            <button class="next-photo"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+
+          </div>
+        
+        </footer>
+
+
+      </div>
   `;
 }
 
 function closeDialog() {
   dialogRef.close();
 }
-
-const dialogHeadline = document.getElementById("dialog-headline");
-
-function giveTitle(index) {
-    dialogHeadline.innerHTML = /*html*/ `
-     <h2> ${images[index].title} </h2>;
-    `;
-  }
-
-
-// dialogHeadline.innerHTML = 'images[i].alt';
-// dialogRef.innerHTML = /*html*/`
-//   <header><h2>img-titles</h2></header>
-// `
