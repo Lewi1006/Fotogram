@@ -150,14 +150,16 @@ function updateDialogBody() {
   dialogRef.innerHTML = /*html*/ `
 <div class="dialog-wrapper">
        <header class="dialog-header-wrapper">
-            <h2>${images[updatedIndex].title} </h2>
             <button onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
            </button>
        </header>
  
-       <div class="dialog-img">
+       <figure class="dialog-img">
+        <figcaption class="img-title">${images[updatedIndex].title} 
+        </figcaption>
          <img src="${images[updatedIndex].src}" alt="${images[updatedIndex].alt}"/>
-       </div>
+
+</figure>
  
        <footer>
          <div class="gallery-controls"> 
