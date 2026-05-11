@@ -146,7 +146,7 @@ function updateDialogBody() {
   dialogRef.innerHTML = /*html*/ `
 <div class="dialog-wrapper">
        <header class="dialog-header">
-            <button aria-label="close dialog" onkeydown="escKeyDown(event)" onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
+            <button aria-label="close dialog" onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
            </button>
        </header>
  
@@ -158,11 +158,11 @@ function updateDialogBody() {
  
        <footer>
          <div class="gallery-controls"> 
-           <button aria-label="previous photo" class="previous-photo" onkeydown="arrowLeftKeyDown(event)" onclick="previousPhoto()">
+           <button aria-label="previous photo" class="previous-photo" onclick="previousPhoto()">
            <img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> 
           </button>
            <p id="count">${updatedIndex + 1}/${images.length}</p>
-           <button aria-label="next photo" class="next-photo" onkeydown="arrowRightKeyDown(event)" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+           <button aria-label="next photo" class="next-photo" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
          </div>
        </footer>
      </div>
@@ -191,20 +191,18 @@ function nextPhoto() {
   updateDialogBody();
 }
 
-function escKeyDown(event) {
-  if (event.key === "Escape") {
-    closeDialog();
-  }
-}
 
-function arrowLeftKeyDown(event) {
-  if (event.key === "ArrowLeft") {
+//eventListener needs to be applied to whole document to work
+// first argument = event type
+// second argument = function that should execute when the event happens (arrow function)
+
+
+document.addEventListener("keydown", (event) => {
+  if(event.key === "ArrowLeft") {
     previousPhoto();
   }
-}
 
-function arrowRightKeyDown(event) {
-  if (event.key === "ArrowRight") {
+  if(event.key === "ArrowRight"){
     nextPhoto();
   }
-}
+});
