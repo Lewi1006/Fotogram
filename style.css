@@ -2,6 +2,14 @@ body {
   background-color: rgba(6, 23, 30, 1);
 }
 
+header{
+height: 8dvh;
+}
+
+main{
+  min-height: calc(100dvh - 8dvh - 100px);
+}
+
 .header {
   height: clamp(72px, 5.5dvw, 80px);
   width: 100%;
@@ -255,4 +263,4 @@ dialog {
       color: rgba(98, 123, 132, 1);
     }
   }
-} */
+} 
