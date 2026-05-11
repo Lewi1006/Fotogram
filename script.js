@@ -146,7 +146,7 @@ function updateDialogBody() {
   dialogRef.innerHTML = /*html*/ `
 <div class="dialog-wrapper">
        <header class="dialog-header">
-            <button aria-label="close dialog" onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
+            <button aria-label="close dialog" tabindex="0" onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
            </button>
        </header>
  
@@ -158,11 +158,11 @@ function updateDialogBody() {
  
        <footer>
          <div class="gallery-controls"> 
-           <button aria-label="previous photo" class="previous-photo" onclick="previousPhoto()">
+           <button aria-label="previous photo" class="previous-photo" tabindex="0" onclick="previousPhoto()">
            <img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> 
           </button>
            <p id="count">${updatedIndex + 1}/${images.length}</p>
-           <button aria-label="next photo" class="next-photo" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+           <button aria-label="next photo" class="next-photo" tabindex="0" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
          </div>
        </footer>
      </div>
