@@ -117,6 +117,7 @@ dialog {
   padding: 24px 16px;
   background-color: rgba(9, 33, 42, 1);
   border-radius: 40px;
+  border: none;
 
   @media screen and (min-width: 900px) {
     width: 688px;
@@ -197,9 +198,17 @@ dialog {
         width: 60px;
       } 
 
+      .previous-photo:hover{
+        background-image: url("./assets/icons/right-arrow-hover.svg");
+      }
+
       .next-photo {
         height: 60px;
         width: 60px;
+      }
+
+      .next-photo:hover{
+        background-image: url("./assets/icons/left-arrow-hover.svg");
       }
 
       #count {
@@ -212,7 +221,7 @@ dialog {
 }
 
 dialog::backdrop{
-  background-color: rgba(9, 33, 42, 0.8);
+  background-color: rgba(9, 33, 42, 0.5);
 }
 
 .footer {
