@@ -102,7 +102,7 @@ const images = [
 function render() {
   for (let i = 0; i < images.length; i++) {
     containerRef.innerHTML += /*html*/ `
-        <img onclick="openDialog(${i})" class="img-gallery-item" src="${images[i].src}" alt="${images[i].alt}"/>
+        <img aria-haspopup="dialog" aria-controls="myDialog" onclick="openDialog(${i})" class="img-gallery-item" src="${images[i].src}" alt="${images[i].alt}"/>
     `;
   }
 }
@@ -146,23 +146,23 @@ function updateDialogBody() {
   dialogRef.innerHTML = /*html*/ `
 <div class="dialog-wrapper">
        <header class="dialog-header">
-            <button onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
+            <button aria-label="close dialog" onclick="closeDialog()"><img src="./assets/icons/close_icon.svg" alt="close button white cross"/>
            </button>
        </header>
  
        <figure class="dialog-figure">
-        <figcaption class="img-title">${images[updatedIndex].title} 
+        <figcaption id="img-title">${images[updatedIndex].title} 
         </figcaption>
          <img src="${images[updatedIndex].src}" alt="${images[updatedIndex].alt}"/>
       </figure>
  
        <footer>
          <div class="gallery-controls"> 
-           <button class="previous-photo" onclick="previousPhoto()">
+           <button aria-label="previous photo" class="previous-photo" onclick="previousPhoto()">
            <img src="./assets/icons/left_arrow.svg" alt="arrow previous photo"/> 
           </button>
            <p id="count">${updatedIndex + 1}/${images.length}</p>
-           <button class="next-photo" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
+           <button aria-label="next photo" class="next-photo" onclick="nextPhoto()"><img src="./assets/icons/right_arrow.svg" alt="arrow next photo"/> </button>
          </div>
        </footer>
      </div>
@@ -190,3 +190,19 @@ function nextPhoto() {
   }
   updateDialogBody();
 }
+
+
+//eventListener needs to be applied to whole document to work
+// first argument = event type
+// second argument = function that should execute when the event happens (arrow function)
+
+
+document.addEventListener("keydown", (event) => {
+  if(event.key === "ArrowLeft") {
+    previousPhoto();
+  }
+
+  if(event.key === "ArrowRight"){
+    nextPhoto();
+  }
+});

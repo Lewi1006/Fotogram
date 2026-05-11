@@ -164,7 +164,7 @@ dialog {
           width: 560px;
         }
 
-      .img-title {
+      #img-title {
         color: rgba(255, 255, 255, 1);
         font-size: 24px;
         font-weight: 700;
