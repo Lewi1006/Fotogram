@@ -203,6 +203,10 @@ dialog {
   }
 }
 
+dialog::backdrop{
+  background-color: rgba(9, 33, 42, 0.8);
+}
+
 .footer {
   background-color: var(--background-color);
   width: 100%;
@@ -255,4 +259,4 @@ dialog {
       color: rgba(98, 123, 132, 1);
     }
   }
-} */
+} 
