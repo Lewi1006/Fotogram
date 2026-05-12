@@ -2,6 +2,10 @@ body {
   background-color: rgba(6, 23, 30, 1);
 }
 
+.no-scroll{
+  overflow: hidden;
+}
+
 .header {
   height: clamp(72px, 5.5dvw, 80px);
   width: 100%;
@@ -105,10 +109,12 @@ body {
 }
 
 dialog {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  max-height: none;
+  width: 310px;
+  height: 650px;
+  _width: 100%;
+  _height: 100%;
+  _max-width: none;
+  _max-height: none;
   margin: auto;
   padding: 24px 16px;
   background-color: rgba(9, 33, 42, 1);
@@ -152,11 +158,13 @@ dialog {
     }
 
     .dialog-figure {
-      width: 290px;
+      width: 250px;
       height: 100%;
+      _width: 290px;
+      _height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 20px;
       justify-content: center;
       align-items: center;
 
@@ -174,7 +182,7 @@ dialog {
 
       img {
         width: 100%;
-        height: 375px;
+        height: 320px;
         object-fit: cover;
 
         @media screen and (min-width: 900px) {
