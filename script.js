@@ -122,6 +122,7 @@ let updatedIndex = 0;
 
 function openDialog(index) {
   dialogRef.showModal();
+  document.body.classList.add('no-scroll');
 
   updatedIndex = index;
 
@@ -130,7 +131,11 @@ function openDialog(index) {
 
 function closeDialog() {
   dialogRef.close();
+  document.body.classList.remove('no-scroll');
 }
+
+
+
 
 // function that runs what happens inside the dialog window --> whole html structure
 // when I click on img --> same img will be large (we make sure it's the same img by accessing same index)
